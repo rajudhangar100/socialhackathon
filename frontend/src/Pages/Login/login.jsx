@@ -3,17 +3,18 @@ import axios from "axios";
 import { MdEmail } from "react-icons/md";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const Login = () => {
   const primaryColor = "#17a2b8";
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
-  // Load remembered credentials
   useEffect(() => {
     const savedEmail = localStorage.getItem("rememberedEmail");
     const savedPassword = localStorage.getItem("rememberedPassword");
@@ -29,7 +30,6 @@ const Login = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // Save or clear remembered credentials
     if (rememberMe) {
       localStorage.setItem("rememberedEmail", email);
       localStorage.setItem("rememberedPassword", password);
@@ -49,14 +49,12 @@ const Login = () => {
       if (response.status === 200) {
         const { user, tokens } = response.data;
 
-        // Save user and tokens
         localStorage.setItem("user", JSON.stringify(user));
         localStorage.setItem("accessToken", tokens.access.token);
         localStorage.setItem("refreshToken", tokens.refresh.token);
         localStorage.setItem("accessTokenExpiration", new Date(tokens.access.expires));
-        localStorage.setItem("role", user.role); // Save role for future use
+        localStorage.setItem("role", user.role);
 
-        // ✅ Redirect based on role
         const role = user.role.toLowerCase();
 
         if (role === "doctor") {
@@ -67,11 +65,11 @@ const Login = () => {
           navigate("/user-home");
         }
 
-        window.location.reload(); // Optional: reload to re-initialize any protected routes
+        window.location.reload();
       }
     } catch (error) {
       console.error("Login failed", error.response || error);
-      setErrorMessage("Invalid email or password");
+      setErrorMessage(t("login.error"));
     }
   };
 
@@ -91,14 +89,13 @@ const Login = () => {
       >
         <div className="card-body">
           <h2 className="text-center mb-4 fw-bold" style={{ color: primaryColor }}>
-            Welcome Back!
+            {t("login.title")}
           </h2>
 
-          <form onSubmit={handleSubmit} noValidate className="needs-validation">
-            {/* Email */}
+          <form onSubmit={handleSubmit} noValidate>
             <div className="mb-3">
               <label htmlFor="username" className="form-label fw-semibold" style={{ color: "#333" }}>
-                Email address
+                {t("login.email")}
               </label>
               <div className="input-group">
                 <span className="input-group-text bg-white">
@@ -116,10 +113,9 @@ const Login = () => {
               </div>
             </div>
 
-            {/* Password */}
             <div className="mb-3">
               <label htmlFor="password" className="form-label fw-semibold" style={{ color: "#333" }}>
-                Password
+                {t("login.password")}
               </label>
               <div className="input-group">
                 <span className="input-group-text bg-white">
@@ -137,7 +133,6 @@ const Login = () => {
               </div>
             </div>
 
-            {/* Remember me */}
             <div className="d-flex align-items-center gap-2 mb-3">
               <input
                 className="form-check-input m-0"
@@ -148,21 +143,15 @@ const Login = () => {
                 onChange={(e) => setRememberMe(e.target.checked)}
                 style={{ transform: "scale(1.1)" }}
               />
-              <label
-                className="form-check-label mb-0"
-                htmlFor="rememberMe"
-                style={{ color: "#555", fontSize: "0.95rem" }}
-              >
-                Remember Me
+              <label className="form-check-label mb-0" htmlFor="rememberMe" style={{ color: "#555", fontSize: "0.95rem" }}>
+                {t("login.rememberMe")}
               </label>
             </div>
 
-            {/* Error message */}
             {errorMessage && (
               <div className="mb-3 text-danger text-center">{errorMessage}</div>
             )}
 
-            {/* Submit Button */}
             <div className="d-grid">
               <button
                 type="submit"
@@ -174,18 +163,13 @@ const Login = () => {
                   transition: "0.3s ease",
                 }}
               >
-                Log In
+                {t("login.loginBtn")}
               </button>
             </div>
 
-            {/* Register Link */}
             <div className="text-center mt-3">
-              <a
-                href="/register"
-                className="text-decoration-none"
-                style={{ color: primaryColor }}
-              >
-                Don't have an account? Register
+              <a href="/register" className="text-decoration-none" style={{ color: primaryColor }}>
+                {t("login.noAccount")}
               </a>
             </div>
           </form>

@@ -1,0 +1,200 @@
+{
+  "home": {
+  "welcome": "Welcome to Care Connect",
+  "tagline": "Your trusted hub for connecting healthcare and technology. For expert consultations and bookings.",
+  "bookConsultation": "Book Consultation",
+  "takeCharge": "Take charge of your health today",
+  "findDoctor": "Find the right doctor or hospital and book in seconds.",
+  "getStarted": "Get Started",
+  "consultation": "Consultation",
+  "booking": "Booking",
+  "helpline": "Helpline",
+  "personalDoctor": "Personal Doctor"
+  },
+  "services": {
+    "heading": "Our Services",
+    "personalDoctor": {
+      "title": "Personal Doctor",
+      "description": "Connect one-on-one with your preferred doctor anytime."
+    },
+    "reachHospitals": {
+      "title": "Reach Hospitals Directly",
+      "description": "Book instantly with top-rated hospitals near you."
+    },
+    "easyBooking": {
+      "title": "Easy Booking",
+      "description": "Schedule appointments in seconds with reminders."
+    },
+    "care24x7": {
+      "title": "24x7 Expert Care",
+      "description": "Qualified professionals ready to help anytime, anywhere."
+    },
+    "doctorData": {
+      "title": "Doctor Data Access",
+      "description": "Doctors get secure access to patient history & records."
+    },
+    "hospitalMgmt": {
+      "title": "Hospital Doctor Management",
+      "description": "Hospitals can easily manage doctors and appointments."
+    },
+    "aiDiagnosis": {
+      "title": "AI-Powered Diagnosis",
+      "description": "Advanced ML model for faster and accurate diagnosis."
+    },
+    "eyeDetection": {
+      "title": "Multilingual Support",
+      "description": "Seamless healthcare access in your native language — supporting multiple regional and global languages."
+    }
+  },
+   "consultation": {
+    "chooseType": "Choose Your Consultation Type",
+    "hospitalTitle": "Consult Hospital Near You",
+    "hospitalDesc": "Choose from our network of trusted hospitals around your area.",
+    "findHospitals": "Find Hospitals",
+    "doctorTitle": "Personal Doctor Consultation",
+    "doctorDesc": "Get personal care and follow-up from your preferred doctor.",
+    "consultNow": "Consult Now"
+  },
+  "reviews": {
+    "sectionTitle": "What Our Patients Say",
+    "verified": "Verified Patient",
+    "shreyes": "CareConnect made healthcare so simple. Booking and consulting is effortless!",
+    "rahul": "I love how easy it is to book appointments and get timely consultations.",
+    "ayesha": "The doctors were very professional, and the consultation was smooth and effective."
+  },
+  "login": {
+    "title": "Welcome Back!",
+    "email": "Email address",
+    "password": "Password",
+    "rememberMe": "Remember Me",
+    "loginBtn": "Log In",
+    "noAccount": "Don't have an account? Register",
+    "error": "Invalid email or password"
+  },
+  "navigation":{
+  "home": "Home",
+  "consultations": "Consultations",
+  "newConsultation": "New Consultation",
+  "medicalHistory": "Medical History",
+  "aboutUs": "About Us",
+  "contact": "Contact",
+  "careers": "Careers",
+  "forDoctor": "For Doctor",
+  "forHospitals": "For Hospitals",
+  "register": "Register",
+  "login": "Login",
+  "profile": "Profile",
+  "logout": "Logout"
+},
+  "about": {
+  "title": "About CareConnect",
+  "subtitle": "An easy initiative to connect patients with trusted healthcare services.",
+  "missionTitle": "Our Mission",
+  "missionText1": "CareConnect's mission is to bridge the gap between patients and healthcare services...",
+  "missionText2": "Whether you're looking for a hospital or consulting a doctor...",
+  "featuresTitle": "What We Offer",
+  "visionTitle": "Our Vision",
+  "visionText1": "We envision a world where everyone can access the right healthcare at the right time...",
+  "visionText2": "Our team is committed to continuous innovation and service excellence.",
+  "ctaTitle": "Join the CareConnect Community",
+  "ctaText": "Whether you're a patient, doctor, or hospital — we're here to help you.",
+  "contactButton": "Contact Us",
+  "features": [
+    { "title": "Nearby Hospital Consultation", "desc": "Quickly find and consult trusted hospitals in your area." },
+    { "title": "Personal Doctor Appointments", "desc": "Consult online with your preferred doctor and receive personalized care." },
+    { "title": "Secure User Authentication", "desc": "Role-based secure login system..." },
+    { "title": "Smart Booking System", "desc": "Easily book, reschedule, or cancel appointments." },
+    { "title": "Review and Rating System", "desc": "See real patient reviews and ratings..." },
+    { "title": "Responsive and Modern UI", "desc": "Built with the latest tech for an optimal experience on all devices." },
+    { "title": "Hospital Admin Dashboard", "desc": "A platform for managing doctors, appointments, and patients." },
+    { "title": "Doctor-Friendly Interface", "desc": "Doctors can securely access patient information..." },
+    { "title": "AI-Based Eye Diagnosis", "desc": "Upload your eye image and get diagnosis from our model..." }
+  ]
+},
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We’re here to help! Reach out for any queries, support, or collaboration ideas.",
+    "formTitle": "Send us a Message",
+    "name": "Your Name",
+    "email": "Your Email",
+    "selectSubject": "Select Subject",
+    "subjects": {
+      "general": "General Inquiry",
+      "technical": "Technical Support",
+      "appointments": "Appointments",
+      "partnership": "Partnership"
+    },
+    "message": "Your Message",
+    "send": "Send Message",
+    "infoTitle": "Contact Information",
+    "emailLabel": "Email:",
+    "phoneLabel": "Phone:",
+    "addressLabel": "Address:",
+    "followUs": "Follow Us",
+    "needHelp": "Looking for a doctor or hospital?",
+    "book": "Book a Consultation",
+    "alert": "Thank you for contacting us! We’ll get back to you soon."
+  },
+  "doctorRegister": {
+    "title": "Doctor Registration",
+    "personalInfo": "👤 Personal Information",
+    "fullName": "Full Name",
+    "email": "Email",
+    "password": "Password",
+    "phone": "Phone Number",
+    "gender": "Gender",
+    "male": "Male",
+    "female": "Female",
+    "other": "Other",
+    "age": "Age",
+    "address": "📍 Address",
+    "street": "Street",
+    "city": "City",
+    "state": "State",
+    "country": "Country",
+    "pinCode": "Pin Code",
+    "doctorInfo": "🏥 Doctor Information",
+    "specialization": "Select Specialization",
+    "experience": "Experience (Years)",
+    "education": "Education",
+    "fees": "Consultation Fees",
+    "register": "Register Doctor"
+  },
+  "hospital": {
+    "title": "Hospital Registration",
+    "basicInfo": "Basic Information",
+    "addressInfo": "Address Information",
+    "name": "Hospital Name",
+    "email": "Email",
+    "password": "Password",
+    "phone": "Phone Number",
+    "street": "Street",
+    "city": "City",
+    "state": "State",
+    "country": "Country",
+    "pin": "Pin Code",
+    "submit": "Register Hospital"
+  },
+ "user":{ "welcome": "Welcome, {{name}} 👋",
+  "subheading": "Your personal healthcare hub - Book consultations, track appointments, and stay informed.",
+  "consultDoctor": "Consult Doctor",
+  "consultDoctorDesc": "Consultations with top doctors at your convenience.",
+  "consultHospital": "Consult Hospital",
+  "consultHospitalDesc": "Consult hospitals for checkups and diagnostics.",
+  "medicalRecords": "Medical Records",
+  "medicalRecordsDesc": "Securely view and manage your medical history.",
+  "bookNow": "Book Now",
+  "viewRecords": "View Records",
+  "recentAppointments": "Recent Appointments",
+  "date": "Date",
+  "type": "Type",
+  "doctor": "Doctor",
+  "status": "Status",
+  "noAppointments": "No appointments found",
+  "healthTips": "Health Tips",
+  "tip1": "💧 Drink plenty of water daily to stay hydrated.",
+  "tip2": "🏃‍♀️ 30 minutes of daily exercise keeps your heart healthy.",
+  "tip3": "🛌 Ensure 7–8 hours of sleep for better recovery and focus."
+},
+  "accessRestricted": "Access restricted to patients only."
+}

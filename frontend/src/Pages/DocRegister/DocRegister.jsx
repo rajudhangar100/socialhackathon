@@ -12,19 +12,21 @@ import {
 import axios from "axios";
 import "./DocRegister.css";
 
-// Import the specializations array
 import specializations from "../../config/doctors";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const DocRegister = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     password: "",
     phone: "",
-    gender: "",   // added
-    age: "",      // added
+    gender: "",
+    age: "",
     street: "",
     city: "",
     state: "",
@@ -35,9 +37,7 @@ const DocRegister = () => {
     education: "",
     fees: "",
   });
-  
 
-  // Function to handle input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevState) => ({
@@ -48,54 +48,41 @@ const DocRegister = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     try {
       const user = JSON.parse(localStorage.getItem("user"));
       const hospitalId = user?.id || "67fb6b4daec134dda70de5ae";
       const role = user?.role;
-  
-      const payload = {
-        ...formData,
-      };
-  
+
+      const payload = { ...formData };
+
       await axios.post(
         `http://localhost:5000/v1/doctors/${hospitalId}`,
         payload
       );
-  
-      alert("Doctor registered successfully");
-  
-      // Redirect based on role
-      if (role === "hospital") {
-        navigate("/hos-home");
-      } else {
-        navigate("/");
-      }
-  
+
+      alert(t("doctorRegister.success"));
+      navigate(role === "hospital" ? "/hos-home" : "/");
     } catch (err) {
       console.error(err);
-      alert("Error registering doctor");
+      alert(t("doctorRegister.error"));
     }
   };
-  
 
   return (
     <Container className="form-container shadow-lg rounded-4 p-5 mt-5 bg-white">
       <h2 className="text-center mb-4 text-primary fw-bold">
-        Doctor Registration
+        {t("doctorRegister.title")}
       </h2>
       <Form onSubmit={handleSubmit}>
-        {/* User Info */}
-        <h4 className="section-heading">👤 Personal Information</h4>
+        <h4 className="section-heading">{t("doctorRegister.personalInfo")}</h4>
 
         <InputGroup className="mb-3">
-          <InputGroup.Text>
-            <FaUserMd />
-          </InputGroup.Text>
+          <InputGroup.Text><FaUserMd /></InputGroup.Text>
           <Form.Control
             type="text"
             name="name"
-            placeholder="Full Name"
+            placeholder={t("doctorRegister.fullName")}
             value={formData.name}
             onChange={handleChange}
             required
@@ -103,13 +90,11 @@ const DocRegister = () => {
         </InputGroup>
 
         <InputGroup className="mb-3">
-          <InputGroup.Text>
-            <FaEnvelope />
-          </InputGroup.Text>
+          <InputGroup.Text><FaEnvelope /></InputGroup.Text>
           <Form.Control
             type="email"
             name="email"
-            placeholder="Email"
+            placeholder={t("doctorRegister.email")}
             value={formData.email}
             onChange={handleChange}
             required
@@ -117,13 +102,11 @@ const DocRegister = () => {
         </InputGroup>
 
         <InputGroup className="mb-3">
-          <InputGroup.Text>
-            <FaLock />
-          </InputGroup.Text>
+          <InputGroup.Text><FaLock /></InputGroup.Text>
           <Form.Control
             type="password"
             name="password"
-            placeholder="Password"
+            placeholder={t("doctorRegister.password")}
             value={formData.password}
             onChange={handleChange}
             required
@@ -131,57 +114,51 @@ const DocRegister = () => {
         </InputGroup>
 
         <InputGroup className="mb-3">
-          <InputGroup.Text>
-            <FaPhone />
-          </InputGroup.Text>
+          <InputGroup.Text><FaPhone /></InputGroup.Text>
           <Form.Control
             type="text"
             name="phone"
-            placeholder="Phone Number"
+            placeholder={t("doctorRegister.phone")}
             value={formData.phone}
             onChange={handleChange}
             required
           />
         </InputGroup>
 
-        
-
         <InputGroup className="mb-3">
-          <InputGroup.Text>Gender</InputGroup.Text>
+          <InputGroup.Text>{t("doctorRegister.gender")}</InputGroup.Text>
           <Form.Select
             name="gender"
-            value={formData.gender || ''}
+            value={formData.gender}
             onChange={handleChange}
             required
           >
-            <option value="">Select Gender</option>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-            <option value="other">Other</option>
+            <option value="">{t("doctorRegister.gender")}</option>
+            <option value="male">{t("doctorRegister.male")}</option>
+            <option value="female">{t("doctorRegister.female")}</option>
+            <option value="other">{t("doctorRegister.other")}</option>
           </Form.Select>
         </InputGroup>
 
         <InputGroup className="mb-3">
-          <InputGroup.Text>Age</InputGroup.Text>
+          <InputGroup.Text>{t("doctorRegister.age")}</InputGroup.Text>
           <Form.Control
             type="number"
             name="age"
-            placeholder="Age"
-            value={formData.age || ''}
+            placeholder={t("doctorRegister.age")}
+            value={formData.age}
             onChange={handleChange}
             required
           />
         </InputGroup>
 
-
-        {/* Address */}
-        <h4 className="section-heading">📍 Address</h4>
+        <h4 className="section-heading">{t("doctorRegister.address")}</h4>
 
         <Form.Group className="mb-3">
           <Form.Control
             type="text"
             name="street"
-            placeholder="Street"
+            placeholder={t("doctorRegister.street")}
             value={formData.street}
             onChange={handleChange}
             required
@@ -194,7 +171,7 @@ const DocRegister = () => {
               <Form.Control
                 type="text"
                 name="city"
-                placeholder="City"
+                placeholder={t("doctorRegister.city")}
                 value={formData.city}
                 onChange={handleChange}
                 required
@@ -206,7 +183,7 @@ const DocRegister = () => {
               <Form.Control
                 type="text"
                 name="state"
-                placeholder="State"
+                placeholder={t("doctorRegister.state")}
                 value={formData.state}
                 onChange={handleChange}
                 required
@@ -221,7 +198,7 @@ const DocRegister = () => {
               <Form.Control
                 type="text"
                 name="country"
-                placeholder="Country"
+                placeholder={t("doctorRegister.country")}
                 value={formData.country}
                 onChange={handleChange}
                 required
@@ -233,7 +210,7 @@ const DocRegister = () => {
               <Form.Control
                 type="text"
                 name="pinCode"
-                placeholder="Pin Code"
+                placeholder={t("doctorRegister.pinCode")}
                 value={formData.pinCode}
                 onChange={handleChange}
                 required
@@ -242,10 +219,8 @@ const DocRegister = () => {
           </Col>
         </Row>
 
-        {/* Doctor Info */}
-        <h4 className="section-heading">🏥 Doctor Information</h4>
+        <h4 className="section-heading">{t("doctorRegister.doctorInfo")}</h4>
 
-        {/* Specialization Dropdown */}
         <Form.Group className="mb-3">
           <Form.Select
             name="specialization"
@@ -253,7 +228,7 @@ const DocRegister = () => {
             onChange={handleChange}
             required
           >
-            <option value="">Select Specialization</option>
+            <option value="">{t("doctorRegister.specialization")}</option>
             {specializations.map((specialization) => (
               <option key={specialization} value={specialization}>
                 {specialization}
@@ -262,17 +237,14 @@ const DocRegister = () => {
           </Form.Select>
         </Form.Group>
 
-        {/* Experience and Education */}
         <Row>
           <Col md={6}>
             <InputGroup className="mb-3">
-              <InputGroup.Text>
-                <FaStethoscope />
-              </InputGroup.Text>
+              <InputGroup.Text><FaStethoscope /></InputGroup.Text>
               <Form.Control
                 type="number"
                 name="experience"
-                placeholder="Experience (Years)"
+                placeholder={t("doctorRegister.experience")}
                 value={formData.experience}
                 onChange={handleChange}
                 required
@@ -281,13 +253,11 @@ const DocRegister = () => {
           </Col>
           <Col md={6}>
             <InputGroup className="mb-3">
-              <InputGroup.Text>
-                <FaGraduationCap />
-              </InputGroup.Text>
+              <InputGroup.Text><FaGraduationCap /></InputGroup.Text>
               <Form.Control
                 type="text"
                 name="education"
-                placeholder="Education"
+                placeholder={t("doctorRegister.education")}
                 value={formData.education}
                 onChange={handleChange}
                 required
@@ -296,28 +266,20 @@ const DocRegister = () => {
           </Col>
         </Row>
 
-        {/* Fees */}
         <InputGroup className="mb-3">
-          <InputGroup.Text>
-            <FaMoneyBill />
-          </InputGroup.Text>
+          <InputGroup.Text><FaMoneyBill /></InputGroup.Text>
           <Form.Control
             type="number"
             name="fees"
-            placeholder="Consultation Fees"
+            placeholder={t("doctorRegister.fees")}
             value={formData.fees}
             onChange={handleChange}
             required
           />
         </InputGroup>
 
-        {/* Submit Button */}
-        <Button
-          variant="primary"
-          type="submit"
-          className="w-100 py-2 fw-semibold"
-        >
-          Register Doctor
+        <Button variant="primary" type="submit" className="w-100 py-2 fw-semibold">
+          {t("doctorRegister.register")}
         </Button>
       </Form>
     </Container>

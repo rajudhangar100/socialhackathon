@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import {
   FaUserMd,
   FaHospitalAlt,
@@ -6,61 +7,68 @@ import {
   FaClock,
   FaDatabase,
   FaMicroscope,
-  FaEye
+  FaEye,
+  FaGlobe,
 } from "react-icons/fa";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './ServicesSection.css';
 
 const ServicesSection = () => {
+  const { t, i18n } = useTranslation();
+
+  // Ensuring the component re-renders when language is changed
+  useEffect(() => {
+    // This ensures the component re-renders when the language is switched
+  }, [i18n.language]);
+
   const services = [
     {
       icon: <FaUserMd className="icon text-primary mb-3 animate__animated animate__fadeInUp" size={35} />,
-      title: "Personal Doctor",
-      description: "Connect one-on-one with your preferred doctor anytime.",
+      title: t("services.personalDoctor.title"),
+      description: t("services.personalDoctor.description"),
     },
     {
       icon: <FaHospitalAlt className="icon text-success mb-3 animate__animated animate__fadeInUp" size={35} />,
-      title: "Reach Hospitals Directly",
-      description: "Book instantly with top-rated hospitals near you.",
+      title: t("services.reachHospitals.title"),
+      description: t("services.reachHospitals.description"),
     },
     {
       icon: <FaStethoscope className="icon text-danger mb-3 animate__animated animate__fadeInUp" size={35} />,
-      title: "Easy Booking",
-      description: "Schedule appointments in seconds with reminders.",
+      title: t("services.easyBooking.title"),
+      description: t("services.easyBooking.description"),
     },
     {
       icon: <FaClock className="icon text-warning mb-3 animate__animated animate__fadeInUp" size={35} />,
-      title: "24x7 Expert Care",
-      description: "Qualified professionals ready to help anytime, anywhere.",
+      title: t("services.care24x7.title"),
+      description: t("services.care24x7.description"),
     },
     {
       icon: <FaDatabase className="icon text-info mb-3 animate__animated animate__fadeInUp" size={35} />,
-      title: "Doctor Data Access",
-      description: "Doctors get secure access to patient history & records.",
+      title: t("services.doctorData.title"),
+      description: t("services.doctorData.description"),
     },
     {
       icon: <FaHospitalAlt className="icon text-secondary mb-3 animate__animated animate__fadeInUp" size={35} />,
-      title: "Hospital Doctor Management",
-      description: "Hospitals can easily manage doctors and appointments.",
+      title: t("services.hospitalMgmt.title"),
+      description: t("services.hospitalMgmt.description"),
     },
     {
       icon: <FaMicroscope className="icon text-primary mb-3 animate__animated animate__fadeInUp" size={35} />,
-      title: "AI-Powered Diagnosis",
-      description: "Advanced ML model for faster and accurate diagnosis.",
+      title: t("services.aiDiagnosis.title"),
+      description: t("services.aiDiagnosis.description"),
     },
     {
-      icon: <FaEye className="icon text-danger mb-3 animate__animated animate__fadeInUp" size={35} />,
-      title: "Eye Disease Detection",
-      description:
-        "Detects cataract, diabetic retinopathy, glaucoma & more using images.",
+      icon: <FaGlobe className="icon text-danger mb-3 animate__animated animate__fadeInUp" size={35} />,
+      title: t("services.eyeDetection.title"),
+      description: t("services.eyeDetection.description"),
     },
   ];
 
   return (
     <section className="features-section py-5 bg-light">
       <div className="container">
-        <h2 className="text-center mb-5 fw-bold text-uppercase">Our Services</h2>
+        <h2 className="text-center mb-5 fw-bold text-uppercase">{t("services.heading")}</h2>
         <div className="row g-4">
           {services.map((service, idx) => (
             <div className="col-md-6 col-lg-3" key={idx}>
