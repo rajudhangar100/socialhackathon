@@ -1,0 +1,48 @@
+.user-register-container {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: #f8f9fa;
+  }
+  
+  .user-register-card {
+    background: white;
+    border-radius: 20px;
+  }
+  
+  h2 {
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 700;
+  }
+  
+  .form-label-custom {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #495057;
+    padding-right: 12px;
+  }
+  
+  .stylish-input {
+    border-radius: 10px;
+    padding: 10px 14px;
+    border: 1px solid #ced4da;
+    transition: all 0.3s ease;
+  }
+  
+  .stylish-input:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+  }
+  
+  button.btn-primary {
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 12px;
+    background-color: #0d6efd;
+    border: none;
+  }
+  
+  button.btn-primary:hover {
+    background-color: #0b5ed7;
+  }
+  

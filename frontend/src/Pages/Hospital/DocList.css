@@ -1,0 +1,14 @@
+.hospital-doc-bg {
+    background: linear-gradient(to right, #e3f2fd, #ffffff);
+    min-height: 100vh;
+}
+
+.doctor-card-style {
+    transition: transform 0.3s ease;
+    border-radius: 20px;
+}
+
+.doctor-card-style:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}

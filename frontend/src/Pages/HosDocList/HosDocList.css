@@ -1,0 +1,34 @@
+.hospital-doc-bg {
+    background: linear-gradient(135deg, #f0f4ff, #ffffff);
+    min-height: 100vh;
+    padding-top: 60px;
+  }
+  
+  .glass-card {
+    background: rgba(255, 255, 255, 0.75);
+    border: none;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .glass-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+  }
+  
+  .doctor-card .card-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+  
+  .doctor-card .card-text {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+  }
+  
+  .doctor-card .btn {
+    font-weight: 600;
+    border-radius: 12px;
+  }
+  

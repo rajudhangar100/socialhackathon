@@ -1,0 +1,23 @@
+.user-doc-bg {
+  background: #f9f9fb;
+}
+
+.doctor-card {
+  background: white;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+
+.doctor-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.1);
+}
+
+.glassy-effect {
+  backdrop-filter: blur(8px);
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.cta-banner {
+  background: linear-gradient(to right, #007bff, #00c6ff);
+}

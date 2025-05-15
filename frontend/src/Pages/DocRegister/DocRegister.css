@@ -1,0 +1,38 @@
+.form-container {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 2rem;
+    max-width: 900px;
+  }
+  
+  .section-heading {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  input, select, textarea {
+    font-size: 1rem !important;
+  }
+  
+  input:focus, select:focus, textarea:focus {
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+    border-color: #0d6efd;
+  }
+  
+  button {
+    border-radius: 8px;
+    font-size: 1.1rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    color: #0d6efd;
+  }
+  
+  .bg-white {
+    background-color: #fff !important;
+  }
+  

@@ -1,0 +1,38 @@
+.user-doc-bg {
+  background: #f5f9ff;
+  min-height: 100vh;
+}
+
+.hospital-card {
+  background: #ffffff;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid #eaeaea;
+}
+
+.hospital-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.1);
+}
+
+.glassy-effect {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(200, 200, 200, 0.2);
+}
+
+.badge {
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.4em 0.6em;
+}
+
+.btn-outline-primary {
+  border-width: 2px;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+  background-color: #007bff;
+  color: white;
+}

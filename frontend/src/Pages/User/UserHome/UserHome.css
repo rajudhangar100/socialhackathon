@@ -1,0 +1,41 @@
+/* Card Hover */
+.hover-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .hover-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-img-top {
+    max-width: 100px;
+  }
+  
+  /* List Items */
+  .list-group-item {
+    font-size: 1rem;
+    padding: 15px 20px;
+  }
+  
+  /* Smooth Entry Animation */
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fade {
+    animation: fadeInUp 0.7s ease-in-out;
+  }
+  
+  /* Buttons */
+  .btn-outline-primary:hover {
+    background-color: #007bff !important;
+    color: white !important;
+  }
+  

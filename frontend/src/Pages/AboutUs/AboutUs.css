@@ -1,0 +1,11 @@
+.about-wrapper h1,
+.about-wrapper h2,
+.about-wrapper h5 {
+  color: #0d6efd;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  transition: 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
